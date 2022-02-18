@@ -19,3 +19,29 @@ export PYTHONPATH=path/to/python:$PYTHONPATH
 export PATH=/path/to/ase:$PATH 
 # e.g.export PATH=/home/hud/.virtualenvs/gpaw/bin/ase:$PATH 
 ```
+
+### LibXC: http://www.tddft.org/programs/libxc/
+
+Get CMAKE
+```
+wget https://github.com/Kitware/CMake/releases/download/v3.23.0-rc1/cmake-3.23.0-rc1.tar.gz
+tar xzvf cmake-3.23.0-rc1.tar.gz
+rm cmake-3.23.0-rc1.tar.gz
+cd cmake-3.22.2
+./bootstrap
+make
+make install
+```
+Get LibXC
+```
+wget http://www.tddft.org/programs/libxc/down.php?file=5.2.2/libxc-5.2.2.tar.gz
+tar xzvf libxc-5.2.2.tar.gz
+rm ibxc-5.2.2.tar.gz
+cd libxc-5.2.2
+./configure --prefix=PATH/TO/LIBXC
+make
+make check
+make install
+```
+
+
