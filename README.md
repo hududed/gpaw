@@ -15,9 +15,9 @@ pip install --upgrade ase
 In `~/.zshrc` or `~/.bashrc`:
 ```
 export PYTHONPATH=path/to/python:$PYTHONPATH     
-# e.g. export PYTHONPATH=/home/hud/.virtualenvs/gpaw/bin/python:$PYTHONPATH
+# e.g. export PYTHONPATH=/home/username/.virtualenvs/gpaw/bin/python:$PYTHONPATH
 export PATH=/path/to/ase:$PATH 
-# e.g.export PATH=/home/hud/.virtualenvs/gpaw/bin/ase:$PATH 
+# e.g.export PATH=/home/username/.virtualenvs/gpaw/bin/ase:$PATH 
 ```
 
 ### LibXC: http://www.tddft.org/programs/libxc/
@@ -63,3 +63,19 @@ cp *.a path/to/lib
 # e.g. mv *.a /usr/local/lib
 ```
 
+### MPI:
+```
+sudo apt update
+sudo apt install libopenmpi-dev
+```
+### ScaLapack
+```
+tar zxvf scalapack-2.2.0.tgz
+cd scalapack-2.2.9
+cp SLmake.inc.example SLmake.inc
+vi SLmake.inc
+  BLASLIB       = /usr/local/lib/libblas.a
+  LAPACKLIB     = /usr/local/lib/liblapack.a
+make lib
+sudo ln -s /home/username/scalapack-2.2.0/libscalapack.a /usr/local/lib/libscalapack.a
+```
