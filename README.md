@@ -26,7 +26,6 @@ Get CMAKE
 ```
 wget https://github.com/Kitware/CMake/releases/download/v3.23.0-rc1/cmake-3.23.0-rc1.tar.gz
 tar xzvf cmake-3.23.0-rc1.tar.gz
-rm cmake-3.23.0-rc1.tar.gz
 cd cmake-3.22.2
 ./bootstrap
 make
@@ -36,12 +35,31 @@ Get LibXC
 ```
 wget http://www.tddft.org/programs/libxc/down.php?file=5.2.2/libxc-5.2.2.tar.gz
 tar xzvf libxc-5.2.2.tar.gz
-rm ibxc-5.2.2.tar.gz
 cd libxc-5.2.2
 ./configure --prefix=PATH/TO/LIBXC
 make
 make check
 make install
 ```
-
+### BLAS, LAPACK: https://askubuntu.com/questions/1270161/how-to-build-and-link-blas-and-lapack-libraries-by-hand-for-use-on-cluster
+BLAS
+```
+wget http://www.netlib.org/blas/blas-3.10.0.tgz
+tar -xvf blas-3.10.0.tgz
+cd BLAS-3.10.0/ 
+make
+mv blas_LINUX.a libblas.a
+mv *.a path/to/lib  # move the blas lib to the library you will be including at compile
+# e.g. mv *.a /usr/local/lib
+```
+LAPACK
+```
+wget https://github.com/Reference-LAPACK/lapack/archive/refs/tags/v3.10.0.tar.gz
+tar -xvf lapack-3.10.0.tar.gz
+cd lapack-3.10.0/
+cp make.inc.example make.inc  # use example make as make
+make
+cp *.a path/to/lib
+# e.g. mv *.a /usr/local/lib
+```
 
