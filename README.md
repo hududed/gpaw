@@ -62,7 +62,6 @@ make
 cp *.a path/to/lib
 # e.g. mv *.a /usr/local/lib
 ```
-
 ### MPI:
 ```
 sudo apt update
@@ -70,6 +69,7 @@ sudo apt install libopenmpi-dev
 ```
 ### ScaLapack
 ```
+wget https://github.com/Reference-ScaLAPACK/scalapack/archive/refs/tags/v2.2.0.tar.gz
 tar zxvf scalapack-2.2.0.tgz
 cd scalapack-2.2.9
 cp SLmake.inc.example SLmake.inc
@@ -78,4 +78,13 @@ vi SLmake.inc
   LAPACKLIB     = /usr/local/lib/liblapack.a
 make lib
 sudo ln -s /home/username/scalapack-2.2.0/libscalapack.a /usr/local/lib/libscalapack.a
+```
+### fftw
+```
+wget http://www.fftw.org/fftw-3.3.10.tar.gz
+tar zxvf fftw-3.3.10.tar.gz
+cd ~/fftw-3.3.10
+./configure --prefix=/home/username/fftw3
+make
+make install
 ```
