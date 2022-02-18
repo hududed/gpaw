@@ -88,3 +88,5 @@ cd ~/fftw-3.3.10
 make
 make install
 ```
+TO-DO: BLACS
+ideas: http://aragorn.pb.bialystok.pl/~mars/tutorial/scalapack/ https://www.netlib.org/blacs/
