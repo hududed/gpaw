@@ -24,7 +24,8 @@ export PATH=/path/to/ase:$PATH
 
 Get CMAKE
 ```
-wget https://github.com/Kitware/CMake/releases/download/v3.22.2/cmake-3.22.2.tar.gztar xzvf cmake-3.23.0-rc1.tar.gz
+wget https://github.com/Kitware/CMake/releases/download/v3.22.2/cmake-3.22.2.tar.gztar
+tar xzvf cmake-3.23.0-rc1.tar.gz
 cd cmake-3.22.2
 ./bootstrap
 make
