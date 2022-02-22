@@ -60,7 +60,7 @@ sudo mv *.a path/to/lib  # move the blas lib to the library you will be includin
 LAPACK
 ```
 wget https://github.com/Reference-LAPACK/lapack/archive/refs/tags/v3.10.0.tar.gz
-tar -xvf lapack-3.10.0.tar.gz
+tar -xvf v3.10.0.tar.gz
 cd lapack-3.10.0/
 cp make.inc.example make.inc  # use example make as make
 make
