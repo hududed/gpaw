@@ -42,6 +42,12 @@ make check
 make install
 ```
 ### BLAS, LAPACK: https://askubuntu.com/questions/1270161/how-to-build-and-link-blas-and-lapack-libraries-by-hand-for-use-on-cluster
+gfortran https://www.how2shout.com/linux/how-to-install-gfortran-9-10-or-11-on-ubuntu-20-04-lts/
+```
+sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+sudo apt install gfortran-11
+```
+
 BLAS
 ```
 wget http://www.netlib.org/blas/blas-3.10.0.tgz
