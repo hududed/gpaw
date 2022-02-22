@@ -44,8 +44,7 @@ make install
 ### BLAS, LAPACK: https://askubuntu.com/questions/1270161/how-to-build-and-link-blas-and-lapack-libraries-by-hand-for-use-on-cluster
 gfortran
 ```
-sudo add-apt-repository ppa:ubuntu-toolchain-r/test
-sudo apt install gfortran-11
+sudo apt-get install gfortran
 ```
 
 BLAS
