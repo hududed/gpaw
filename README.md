@@ -54,8 +54,8 @@ tar -xvf blas-3.10.0.tgz
 cd BLAS-3.10.0/ 
 make
 mv blas_LINUX.a libblas.a
-mv *.a path/to/lib  # move the blas lib to the library you will be including at compile
-# e.g. mv *.a /usr/local/lib
+sudo mv *.a path/to/lib  # move the blas lib to the library you will be including at compile
+# e.g. sudo mv *.a /usr/local/lib
 ```
 LAPACK
 ```
