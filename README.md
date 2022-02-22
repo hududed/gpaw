@@ -75,8 +75,8 @@ sudo apt install libopenmpi-dev
 ### ScaLapack
 ```
 wget https://github.com/Reference-ScaLAPACK/scalapack/archive/refs/tags/v2.2.0.tar.gz
-tar zxvf scalapack-2.2.0.tgz
-cd scalapack-2.2.9
+tar zxvf v2.2.0.tar.gz
+cd scalapack-2.2.0
 cp SLmake.inc.example SLmake.inc
 vi SLmake.inc
   BLASLIB       = /usr/local/lib/libblas.a
@@ -89,9 +89,9 @@ sudo ln -s /home/username/scalapack-2.2.0/libscalapack.a /usr/local/lib/libscala
 wget http://www.fftw.org/fftw-3.3.10.tar.gz
 tar zxvf fftw-3.3.10.tar.gz
 cd ~/fftw-3.3.10
-./configure --prefix=/home/username/fftw3
+./configure --prefix=~/fftw3
 make
-make install
+sudo make install
 ```
 TO-DO: BLACS
 ideas: http://aragorn.pb.bialystok.pl/~mars/tutorial/scalapack/ https://www.netlib.org/blacs/
