@@ -2,6 +2,14 @@
 
 ## Installation
 
+
+UPDATE:
+
+Follow this for Ubuntu 18+: https://wiki.fysik.dtu.dk/gpaw/platforms/Linux/ubuntu.html
+The steps below may be superseded by the link above.
+
+
+
 Steps to install gpaw according to https://wiki.fysik.dtu.dk/gpaw/install.html.
 
 ### ASE:  https://wiki.fysik.dtu.dk/ase/install.html#download-and-install
@@ -93,5 +101,5 @@ cd ~/fftw-3.3.10
 make
 sudo make install
 ```
-TO-DO: BLACS
-ideas: http://aragorn.pb.bialystok.pl/~mars/tutorial/scalapack/ https://www.netlib.org/blacs/
+
+
