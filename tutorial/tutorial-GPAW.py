@@ -1,25 +1,27 @@
-# creates: h2.emt.traj
-from ase import Atoms
-# from ase.calculators.emt import EMT
 from ase.build import molecule
-from ase.optimize import QuasiNewton
 from gpaw import GPAW
 
+a = 8.0
+h = 0.2
 
-# system = Atoms('H2', positions=[[0.0, 0.0, 0.0],
-#                                 [0.0, 0.0, 1.0]])
+energies = {}
+with open(f'results-{h:.2f}.txt', 'w') as resultfile:
 
-# Atoms.set_cell((6.0, 6.0, 6.0))
-# Atoms.center()
-
-system = molecule('H2O', vacuum=3.0)
-# system.set_cell((6.0, 6.0, 6.0))
-# system.center()
-
-calc = GPAW()
-
-system.calc = calc
-
-opt = QuasiNewton(system, trajectory='h2o.gpaw.traj')
-
-opt.run(fmax=0.05)
+    for name in ['H2O', 'H', 'O']:
+        system = molecule(name)
+        system.set_cell((a, a, a))
+        system.center()
+    
+        calc = GPAW(h=h,
+                    txt=f'gpaw-{name}-{h:.2f}.txt')
+        if name == 'H' or name == 'O':
+            calc.set(hund=True)
+    
+        system.calc = calc
+    
+        energy = system.get_potential_energy()
+        energies[name] = energy
+        print(name, energy, file=resultfile)
+    
+    e_atomization = energies['H2O'] - 2 * energies['H'] - energies['O']
+    print(e_atomization, file=resultfile)
